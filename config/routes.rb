@@ -10,7 +10,9 @@ Bday::Application.routes.draw do
     end
   end
 
-  get '/auth' => 'sessions#create', :as => :session_create
+  get '/auth/google_oauth2' => 'sessions#create', :as => :session_create
+
+  get '/auth/google_oauth2/callback' => "sessions#create"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
