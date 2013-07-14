@@ -5,14 +5,15 @@ Bday::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'users#index'
   resources :sessions
-  resources :users do
-    resources :birthdays do
-    end
-  end
-
+  resources :users
+  resources :calendars
+  resources :birthdays
+  
   get '/auth/google_oauth2' => 'sessions#create', :as => :session_create
 
-  get '/auth/google_oauth2/callback' => "sessions#create"
+  get '/auth/google_oauth2/callback' => 'sessions#create'
+
+  get '/birthdays' => 'birthdays#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

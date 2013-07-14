@@ -1,12 +1,12 @@
 class CreateUsers < ActiveRecord::Migration
-
-  attr_accessible :provider, :uid, :name
-  
   def change
     create_table :users do |t|
-      t.string :username, :email, :password_digest, :uid, :provider
+      t.string :username, :email, :password_digest, :uid, :provider, :oauth_token
+      t.datetime :oauth_expires_at
 
       t.timestamps
     end
   end
-end
+end      
+      
+  
