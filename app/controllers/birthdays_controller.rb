@@ -7,6 +7,7 @@ class BirthdaysController < ApplicationController
     @client.authorization.access_token = @token
     @calendar = @client.discovered_api('calendar', 'v3')
     debugger
+    
     @url = @current_user.contacts_url
     doc = Nokogiri::HTML(open(@url))
     render new_birthday_path
