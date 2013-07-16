@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   # has_secure_password
   has_many :birthdays
   
-  CLIENT_ID = '915798849853.apps.googleusercontent.com'
-  MAX_RESULTS = 300
+  
+  MAX_RESULTS = 5000
   REDIRECT_URI = 'http://localhost/auth/google_oauth2/callback'
 
   

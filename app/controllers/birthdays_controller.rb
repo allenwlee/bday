@@ -1,11 +1,12 @@
 class BirthdaysController < ApplicationController
   
+  require 'open-uri'
+
   def new
     @current_user = User.find(session[:user_id])
     @token = @current_user.oauth_token
     @client = Google::APIClient.new
     @client.authorization.access_token = @token
-    @calendar = @client.discovered_api('calendar', 'v3')
     debugger
     
     @url = @current_user.contacts_url

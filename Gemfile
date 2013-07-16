@@ -28,6 +28,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'debugger'
 gem 'omniauth-google-oauth2'
 gem 'nokogiri'
+gem 'typhoeus'
 
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
